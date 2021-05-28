@@ -1,0 +1,236 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+      pv.kubernetes.io/bind-completed: "yes"
+      pv.kubernetes.io/bound-by-controller: "yes"
+      volume.beta.kubernetes.io/storage-provisioner: csi.trident.netapp.io
+    creationTimestamp: "2021-03-29T21:40:37Z"
+    finalizers:
+    - kubernetes.io/pvc-protection
+    labels:
+      app: mysql-persistent
+      app.kubernetes.io/component: mysql-persistent
+      app.kubernetes.io/instance: mysql-persistent
+      template: moodle
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:openshift.io/generated-by: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/instance: {}
+            f:template: {}
+        f:spec:
+          f:accessModes: {}
+          f:resources:
+            f:requests:
+              .: {}
+              f:storage: {}
+          f:volumeMode: {}
+      manager: oc
+      operation: Update
+      time: "2021-03-29T21:40:37Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:pv.kubernetes.io/bind-completed: {}
+            f:pv.kubernetes.io/bound-by-controller: {}
+            f:volume.beta.kubernetes.io/storage-provisioner: {}
+        f:spec:
+          f:volumeName: {}
+        f:status:
+          f:accessModes: {}
+          f:capacity:
+            .: {}
+            f:storage: {}
+          f:phase: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2021-03-29T21:40:40Z"
+    name: moodle-data
+    namespace: 950003-test
+    resourceVersion: "804540309"
+    selfLink: /api/v1/namespaces/950003-test/persistentvolumeclaims/moodle-data
+    uid: f483cef6-616c-43c4-8519-3a661dbbdbc2
+  spec:
+    accessModes:
+    - ReadWriteMany
+    resources:
+      requests:
+        storage: 10Gi
+    storageClassName: netapp-file-standard
+    volumeMode: Filesystem
+    volumeName: pvc-f483cef6-616c-43c4-8519-3a661dbbdbc2
+  status:
+    accessModes:
+    - ReadWriteMany
+    capacity:
+      storage: 10Gi
+    phase: Bound
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    annotations:
+      pv.kubernetes.io/bind-completed: "yes"
+      pv.kubernetes.io/bound-by-controller: "yes"
+      volume.beta.kubernetes.io/storage-provisioner: csi.trident.netapp.io
+    creationTimestamp: "2021-03-20T21:46:52Z"
+    finalizers:
+    - kubernetes.io/pvc-protection
+    labels:
+      template: mysql-persistent-template
+      template.openshift.io/template-instance-owner: 3899449f-e036-44f3-a1eb-f6dcc428d8ad
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:template: {}
+            f:template.openshift.io/template-instance-owner: {}
+        f:spec:
+          f:accessModes: {}
+          f:resources:
+            f:requests:
+              .: {}
+              f:storage: {}
+          f:volumeMode: {}
+      manager: openshift-controller-manager
+      operation: Update
+      time: "2021-03-20T21:46:52Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:pv.kubernetes.io/bind-completed: {}
+            f:pv.kubernetes.io/bound-by-controller: {}
+            f:volume.beta.kubernetes.io/storage-provisioner: {}
+        f:spec:
+          f:volumeName: {}
+        f:status:
+          f:accessModes: {}
+          f:capacity:
+            .: {}
+            f:storage: {}
+          f:phase: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2021-03-20T21:46:55Z"
+    name: moodle-mysql
+    namespace: 950003-test
+    resourceVersion: "754843796"
+    selfLink: /api/v1/namespaces/950003-test/persistentvolumeclaims/moodle-mysql
+    uid: 41ae2766-6045-4df0-a05f-1fb326a47fb7
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 2Gi
+    storageClassName: netapp-file-standard
+    volumeMode: Filesystem
+    volumeName: pvc-41ae2766-6045-4df0-a05f-1fb326a47fb7
+  status:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 2Gi
+    phase: Bound
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+      pv.kubernetes.io/bind-completed: "yes"
+      pv.kubernetes.io/bound-by-controller: "yes"
+      volume.beta.kubernetes.io/storage-provisioner: csi.trident.netapp.io
+    creationTimestamp: "2021-03-30T20:53:14Z"
+    finalizers:
+    - kubernetes.io/pvc-protection
+    labels:
+      app: pma-persistent
+      app.kubernetes.io/component: pma-persistent
+      app.kubernetes.io/instance: pma-persistent
+      template: pma
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:openshift.io/generated-by: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/instance: {}
+            f:template: {}
+        f:spec:
+          f:accessModes: {}
+          f:resources:
+            f:requests:
+              .: {}
+              f:storage: {}
+          f:volumeMode: {}
+      manager: oc
+      operation: Update
+      time: "2021-03-30T20:53:14Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:pv.kubernetes.io/bind-completed: {}
+            f:pv.kubernetes.io/bound-by-controller: {}
+            f:volume.beta.kubernetes.io/storage-provisioner: {}
+        f:spec:
+          f:volumeName: {}
+        f:status:
+          f:accessModes: {}
+          f:capacity:
+            .: {}
+            f:storage: {}
+          f:phase: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2021-03-30T20:53:17Z"
+    name: pma-data
+    namespace: 950003-test
+    resourceVersion: "808454618"
+    selfLink: /api/v1/namespaces/950003-test/persistentvolumeclaims/pma-data
+    uid: 6ecfddef-cc64-4dad-95da-f5db3c933af8
+  spec:
+    accessModes:
+    - ReadWriteMany
+    resources:
+      requests:
+        storage: 5Gi
+    storageClassName: netapp-file-standard
+    volumeMode: Filesystem
+    volumeName: pvc-6ecfddef-cc64-4dad-95da-f5db3c933af8
+  status:
+    accessModes:
+    - ReadWriteMany
+    capacity:
+      storage: 5Gi
+    phase: Bound
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

@@ -1,0 +1,33 @@
+<script
+  src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+  integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+  crossorigin="anonymous"
+></script>
+
+<script>
+  function showHide() {
+    if ($("#login").parent().is(":hidden")) {
+      $("#login").parent().show();
+      $('#standard-login').hide();
+    } else {
+      $("#login").parent().hide();
+    }
+  }
+
+  $(function () {
+    // Only run if login form is visible
+    if ($('#login #username').length > 0) {
+      $("#login").parent().hide();
+      $('.forgetpass').hide().next().hide();
+      // $('.forgetpass').hide();
+      $('.col-md-5').removeClass('col-md-5').addClass('col');
+      $('.card-body').append('<div class="mt-3"><a href="#" id="standard-login">External Partner Login</a></div>');
+
+      if ($("#standard-login").length === 1) {
+        $("#standard-login").on("click", function () {
+          showHide();
+        });
+      }
+    }
+  });
+</script>

@@ -1,0 +1,19 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: moodle
+  labels:
+    app: moodle
+spec:
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/warrenchristian1telus/moodle-jfrog.git'
+  output:
+    to:
+      kind: ImageStreamTag
+      name: "moodle:latest"
+      namespace: d9r6jk-dev
+  strategy:
+    dockerStrategy:
+      dockerfilePath: Dockerfile

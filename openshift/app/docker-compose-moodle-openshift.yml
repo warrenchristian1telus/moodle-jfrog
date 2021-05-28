@@ -1,0 +1,5 @@
+version: '3'
+services:
+  moodle:
+    image: warrenchristian1/moodle:openshift
+    env_file: ../../.env.silver

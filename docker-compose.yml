@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  moodle:
+    image: moodle
+    build:
+      context: .
+      dockerfile: ./Dockerfile.intermediate
+    env_file:
+      - .env.local

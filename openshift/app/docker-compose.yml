@@ -1,0 +1,48 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:$MYSQL_TAG
+    environment:
+      MYSQL_DATABASE: $DB_NAME
+      MYSQL_USER: $DB_USER
+      MYSQL_PASSWORD: $DB_PASSWORD
+      MYSQL_ROOT_PASSWORD: $DB_ROOT_PASSWORD
+    ports:
+      - '$DB_PORT'
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "$PHPMYADMIN_PORT"
+    links:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+    depends_on:
+      - mysql
+  moodle:
+    image: aesr/moodle
+    ports:
+      - '$HTTP_PORT'
+    links:
+      - mysql
+    environment:
+      DB_HOST_NAME: mysql
+      MOODLE_DB_NAME: $DB_NAME
+      MOODLE_DATABASE_USER: $DB_NAME
+      MOODLE_DB_PASSWORD: $DB_PASSWORD
+      MOODLE_WWW_ROOT: $SITE_URL
+      MOODLE_DATA_PATH: /var/www/moodledata/persistent
+      MOODLE_USERNAME: admin
+      MOODLE_PASSWORD: pa33w0rd
+      MOODLE_EMAIL: admin@email.com
+      MOODLE_SITE_NAME: $PROJECT_NAME
+    volumes:
+      - ./moodledata:/var/www/moodledata
+      - ./moodle:/var/www/html
+    depends_on:
+      - mysql
+volumes:
+  moodle_data:
+    driver: local
+  moodledata_data:
+    driver: local

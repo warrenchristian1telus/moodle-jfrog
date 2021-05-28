@@ -1,0 +1,24 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: moodle
+  labels:
+    app: moodle
+spec:
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/warrenchristian1telus/moodle-jfrog.git'
+      ref: 'openshift'
+  output:
+    to:
+      kind: ImageStreamTag
+      name: "moodle:openshift"
+      namespace: moodle-aro
+  resources:
+    limits:
+      cpu: "1000m"
+      memory: "256Mi"
+  strategy:
+    dockerStrategy:
+      dockerfilePath: Dockerfile
