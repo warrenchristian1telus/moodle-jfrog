@@ -69,8 +69,6 @@ RUN ln -sf /proc/self/fd/1 /var/log/apache2/access.log && \
 	install rsync && \
   	docker-php-ext-configure intl && \
 	apt-get install tar && \
-  	docker-php-ext-install intl && \
-	docker-php-ext-install mysqli && \
 	apt-get install libxml2-dev -y && \
 	set -eux; \
 	\
@@ -115,6 +113,7 @@ RUN ln -sf /proc/self/fd/1 /var/log/apache2/access.log && \
 		ftp \
 		gd \
 		gettext \
+		intl \
 		mysqli \
 		opcache \
 		shmop \
